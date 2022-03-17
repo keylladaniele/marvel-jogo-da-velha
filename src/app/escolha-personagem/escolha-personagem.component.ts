@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { MarvelApiService } from '../services/marvel-api.service';
 
 @Component({
@@ -9,19 +8,24 @@ import { MarvelApiService } from '../services/marvel-api.service';
 })
 export class EscolhaPersonagemComponent implements OnInit {
 
-  constructor(private characterServ: MarvelApiService) { }
+  constructor(private service: MarvelApiService) { }
 
-  allCharacters: Observable<any>;
+  allCharacters: any=[ ];
+  characterName: string;
+  showSearchResult: boolean;
+  searchedCharacter:any=[ ];
 
-  ngOnInit() {
-    this.getCharacters();
+  ngOnInit(): void {
     
+    this.service.allCharacters().subscribe((result) => {
+      console.log(result);
+      this.allCharacters = result.data.results;
+    })
+
+
   }
 
-  getCharacters() {
-    console.log(`Mostre os personagens ${this.allCharacters}`);
-    
-  }
+  
 
 
 
