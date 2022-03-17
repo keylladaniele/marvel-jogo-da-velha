@@ -1,0 +1,4 @@
+<p>escolha-personagem works!</p>
+
+<p *ngFor='let character of allCharacters | async'>
+    {{ character.name | json }} </p>
