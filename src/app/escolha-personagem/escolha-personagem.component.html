@@ -1,4 +1,19 @@
-<p>escolha-personagem works!</p>
+<div class="container">
+    <div class="player 1">
+        <h3>Player 1 - Escolha seu personagem</h3>
+        <input type="text" name="characterName" id="characterName" placeholder="Buscar personagem" (keyup)="findCharacter($event)" required>
+        
+    </div>
+    <!-- <div class="player 2">
+        <h3>Player 2 - Escolha seu personagem</h3>
+        <input type="text" placeholder="Digite o nome do personagem">
+    </div> -->
+</div>
 
-<!-- <p *ngFor='let character of allCharacters | async'>
-    {{ character | json }} </p> -->
+<div>
+    <div class="card-personagem">
+        <img src="" alt="">
+    </div>
+</div>
+
+{{characterName}}

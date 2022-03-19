@@ -17,12 +17,26 @@ export class EscolhaPersonagemComponent implements OnInit {
 
   ngOnInit(): void {
     
-    this.service.allCharacters().subscribe((result) => {
+    this.service.getAllCharacters().subscribe((result) => {
       console.log(result);
       this.allCharacters = result.data.results;
     })
 
+  }
 
+  findCharacter(event:any) {
+    this.characterName = event.target.value;
+    console.log(this.characterName);
+    this.service.getCharacterByName(this.characterName).subscribe((result)=>{
+      console.log(result);
+      if(result.data.count>0) {
+        this.showSearchResult = true;
+        this.searchedCharacter = result.data.results;
+      }
+      else {
+        this.ngOnInit();
+      }
+    })
   }
 
   

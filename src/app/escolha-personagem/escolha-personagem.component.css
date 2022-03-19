@@ -1,0 +1,35 @@
+.container {
+    margin: 0 auto;
+    width: 80vw;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.658);
+    border: 2px solid purple;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+input {
+    width: 70%;
+    height: 25px;
+    margin: 0px 10px;
+    border-radius: 5px;
+    border: none;
+    border-bottom: 2px solid rgba(67, 13, 99, 0.623);
+    background-color: rgb(224, 209, 238);
+    padding: 5px;
+}
+
+input:focus {
+    border: none;
+}
+
+button {
+    width: 20%;
+    padding:10px;
+    background-color: rgb(67, 13, 99);
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
