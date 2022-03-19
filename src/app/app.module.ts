@@ -18,7 +18,7 @@ import { PersonagemComponent } from './escolha-personagem/personagem/personagem.
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
