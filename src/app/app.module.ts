@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EscolhaPersonagemComponent } from './escolha-personagem/escolha-personagem.component';
 import { PersonagemComponent } from './escolha-personagem/personagem/personagem.component';
+import { JogoDaVelhaComponent } from './jogo-da-velha/jogo-da-velha.component';
 
 
 
@@ -14,6 +15,7 @@ import { PersonagemComponent } from './escolha-personagem/personagem/personagem.
     AppComponent,
     EscolhaPersonagemComponent,
     PersonagemComponent,
+    JogoDaVelhaComponent,
   ],
   imports: [
     BrowserModule,
