@@ -1,19 +1,36 @@
 <div class="container">
     <div class="player 1">
         <h3>Player 1 - Escolha seu personagem</h3>
-        <input type="text" name="characterName" id="characterName" placeholder="Buscar personagem" (keyup)="findCharacter($event)" required>
+        <input type="text" name="characterName" id="characterName" placeholder="Buscar personagem"
+            (keyup)="findCharacter1($event)" required>
+        <div *ngIf="showSearchResult1">
+            <div *ngFor="let character1 of searchedCharacter1">
+                <div class="card">
+                    <div class="card-character">
+                        <img src="{{character1.thumbnail.path}}.{{character1.thumbnail.extension}}" alt="Imagem do personagem {{character1.name}}">
+                        <h4>{{ character1.name }}</h4>
+                            <input type="button" value="Confirmar" class="btn" id="btn-character1" (click)="confirmCharacter1(character1.name)">
+                    </div>
+                </div>
+            </div>
+        </div>
         
     </div>
-    <!-- <div class="player 2">
+    <div class="player 2">
         <h3>Player 2 - Escolha seu personagem</h3>
-        <input type="text" placeholder="Digite o nome do personagem">
-    </div> -->
-</div>
-
-<div>
-    <div class="card-personagem">
-        <img src="" alt="">
+        <input type="text" name="characterName" id="characterName" placeholder="Buscar personagem"
+            (keyup)="findCharacter2($event)" required>
+        <div *ngIf="showSearchResult2">
+            <div *ngFor="let character2 of searchedCharacter2">
+                <div class="card">
+                    <div class="card-character">
+                        <img src="{{character2.thumbnail.path}}.{{character2.thumbnail.extension}}" alt="Imagem do personagem {{character2.name}}">
+                        <h4>{{ character2.name }}</h4>
+                            <input type="button" value="Confirmar" class="btn" id="btn-character2" (click)="confirmCharacter2(character2.name)">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
-{{characterName}}

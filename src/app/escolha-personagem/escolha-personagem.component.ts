@@ -12,8 +12,12 @@ export class EscolhaPersonagemComponent implements OnInit {
 
   allCharacters: any=[ ];
   characterName: string;
-  showSearchResult: boolean;
-  searchedCharacter:any=[ ];
+  showSearchResult1: boolean;
+  searchedCharacter1:any=[ ];
+  showSearchResult2: boolean;
+  searchedCharacter2:any=[ ];
+  character1Confirmed: string;
+  character2Confirmed: string;
 
   ngOnInit(): void {
     
@@ -24,14 +28,14 @@ export class EscolhaPersonagemComponent implements OnInit {
 
   }
 
-  findCharacter(event:any) {
+  findCharacter1(event:any) {
     this.characterName = event.target.value;
     console.log(this.characterName);
-    this.service.getCharacterByName(this.characterName).subscribe((result)=>{
+    this.service.getCharacterByName1(this.characterName).subscribe((result)=>{
       console.log(result);
       if(result.data.count>0) {
-        this.showSearchResult = true;
-        this.searchedCharacter = result.data.results;
+        this.showSearchResult1= true;
+        this.searchedCharacter1= result.data.results;
       }
       else {
         this.ngOnInit();
@@ -39,8 +43,31 @@ export class EscolhaPersonagemComponent implements OnInit {
     })
   }
 
-  
+  findCharacter2(event:any) {
+    this.characterName = event.target.value;
+    console.log(this.characterName);
+    this.service.getCharacterByName2(this.characterName).subscribe((result)=>{
+      console.log(result);
+      if(result.data.count>0) {
+        this.showSearchResult2 = true;
+        this.searchedCharacter2 = result.data.results;
+      }
+      else {
+        this.ngOnInit();
+      }
+    })
+  }
 
+  confirmCharacter1(character1Name: string) {
+    console.log(character1Name);
+    this.character1Confirmed = character1Name;
+    
+  }
 
+  confirmCharacter2(character2Name: string) {
+    console.log(character2Name);
+    this.character2Confirmed = character2Name;
+    
+  }
 
 }

@@ -10,7 +10,12 @@
     text-align: center;
 }
 
-input {
+.player {
+    width: 50%;
+    display: inline-block;
+}
+
+#characterName {
     width: 70%;
     height: 25px;
     margin: 0px 10px;
@@ -21,15 +26,33 @@ input {
     padding: 5px;
 }
 
-input:focus {
+#characterName:focus {
     border: none;
 }
 
-button {
-    width: 20%;
-    padding:10px;
+.btn {
+    width: 110px;
+    height: 35px;
+    padding: 10px;
     background-color: rgb(67, 13, 99);
     color: white;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
 }
+
+img {
+    width: 18vw;
+    border-bottom: 3px solid purple;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.384);
+}
+
+.card {
+    margin: 15px;
+    width: 200px;
+    align-items: center;
+    justify-content: center;
+}
+
+
