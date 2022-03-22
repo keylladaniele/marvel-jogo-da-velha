@@ -1,0 +1,36 @@
+
+
+
+img {
+    width: 15vw;
+    
+}
+
+#xmen {
+    display: flex;
+    position: fixed;
+    top: 50%;
+    left: 5%;
+    animation: moverXmen 6s ease-in-out infinite alternate;
+
+}
+
+#avengers {
+    display: flex;
+    position: fixed;
+    top: 55%;
+    right: 5%;
+    animation: moverAvengers 6.5s ease-in-out infinite alternate;
+}
+
+@keyframes moverXmen {
+    from{
+        transform: translateY(100px);
+    }
+}
+
+@keyframes moverAvengers {
+    from{
+        transform: translateY(150px);
+    }
+}

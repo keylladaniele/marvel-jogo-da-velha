@@ -188,6 +188,12 @@ export class GameService {
 
   }
 
+  continuePlaying(): void {
+    this._showEnd = false;
+    this._showStart = false;
+    this._showGameboard = true;
+  }
+
   newGame(): void {
     this.inicio();
     this._showEnd = false;

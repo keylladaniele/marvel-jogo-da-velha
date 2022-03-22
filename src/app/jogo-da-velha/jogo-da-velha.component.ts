@@ -9,6 +9,10 @@ import { GameService } from '../services/game.service';
 export class JogoDaVelhaComponent implements OnInit {
 
   constructor(private gameService: GameService) { }
+  
+  character1Confirmed: string;
+  character2Confirmed: string;
+
 
   ngOnInit(): void { this.gameService.inicio();
   }
@@ -24,7 +28,7 @@ export class JogoDaVelhaComponent implements OnInit {
   get showGameboard(): boolean {
     return this.gameService.showGameboard;
   }
-
+ 
   startGame() : void {
     this.gameService.startGame();
   }
@@ -52,5 +56,19 @@ export class JogoDaVelhaComponent implements OnInit {
   newGame(): void {
     this.gameService.newGame();
   }
+
+
+  confirmCharacter1(character1Name: string) {
+    console.log(character1Name);
+    this.character1Confirmed = character1Name;
+    
+  }
+
+  confirmCharacter2(character2Name: string) {
+    console.log(character2Name);
+    this.character2Confirmed = character2Name;
+    
+  }
+  
 
 }

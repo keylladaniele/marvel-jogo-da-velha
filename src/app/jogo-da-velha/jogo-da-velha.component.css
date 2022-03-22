@@ -1,5 +1,5 @@
 .container {
-    
+    margin-top: 40px;
     justify-content: center;
     justify-items: center;
     text-align: center;
@@ -9,6 +9,7 @@
     margin: 0 auto;
     width: 500px;
     height: 500px;
+    padding-top: 0px;
 }
 
 ul li {
@@ -34,41 +35,6 @@ ul li {
     background-image: url('/assets/images/o2.png');
 }
 
-
-img {
-    width: 30vw;
-    
-}
-
-#xmen {
-    display: flex;
-    position: fixed;
-    top: 30%;
-    left: 5%;
-    animation: moverXmen 6s ease-in-out infinite alternate;
-
-}
-
-#avengers {
-    display: flex;
-    position: fixed;
-    top: 35%;
-    right: 5%;
-    animation: moverAvengers 6.5s ease-in-out infinite alternate;
-}
-
-@keyframes moverXmen {
-    from{
-        transform: translateY(100px);
-    }
-}
-
-@keyframes moverAvengers {
-    from{
-        transform: translateY(150px);
-    }
-}
-
 a {
     margin: 20px 0px;
     padding: 10px 20px;
@@ -88,4 +54,9 @@ a:active {
 p {
     font-size: 40px;
     color: #f7e4a1;
+}
+
+.botao {
+    width: 150px;
+    margin: 30px;
 }

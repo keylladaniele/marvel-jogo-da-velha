@@ -1,10 +1,7 @@
 .container {
     margin: 0 auto;
     width: 80vw;
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.658);
-    border: 2px solid purple;
-    padding: 20px;
+    padding: 100px 20px;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -41,8 +38,20 @@
     cursor: pointer;
 }
 
+.card-character1{    
+    position: fixed;
+    top: 45%;
+    left: 22%;
+}
+
+.card-character2{    
+    position: fixed;
+    top: 45%;
+    right: 22%;
+}
+
 img {
-    width: 18vw;
+    width: 13vw;
     border-bottom: 3px solid purple;
     border-radius: 10px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.384);
@@ -55,4 +64,7 @@ img {
     justify-content: center;
 }
 
+.btn-iniciar {
+    margin: 50px 0px;
+}
 
