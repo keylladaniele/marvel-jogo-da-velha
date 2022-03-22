@@ -1,0 +1,84 @@
+<div class="container">
+    <h1>Jogo da velha</h1>
+    <div *ngIf="showStart">
+        <a href="#" class="btn" (click)="startGame()"> Iniciar jogo </a>
+    </div>
+
+
+    <div class="game" *ngIf="!showGameboard">
+        <ul>
+            <li class="square" [ngClass]="{
+          'img-x': mostrarX(0,0),
+          'img-o': mostrarO(0,0),
+          'color-win': mostrarWin(0,0)
+        }" (click)="toPlay(0,0)">
+            </li>
+            <li class="square" [ngClass]="{
+        'img-x': mostrarX(0,1),
+        'img-o': mostrarO(0,1),
+        'color-win': mostrarWin(0,1)
+      }" (click)="toPlay(0,1)">
+            </li>
+            <li class="square" [ngClass]="{
+        'img-x': mostrarX(0,2),
+        'img-o': mostrarO(0,2),
+        'color-win': mostrarWin(0,2)
+      }" (click)="toPlay(0,2)">
+            </li>
+            <li class="square" [ngClass]="{
+        'img-x': mostrarX(1,0),
+        'img-o': mostrarO(1,0),
+        'color-win': mostrarWin(1,0)
+      }" (click)="toPlay(1,0)">
+            </li>
+            <li class="square" [ngClass]="{
+        'img-x': mostrarX(1,1),
+        'img-o': mostrarO(1,1),
+        'colr-win': mostrarWin(1,1)
+      }" (click)="toPlay(1,1)">
+            </li>
+            <li class="square" [ngClass]="{
+        'img-x': mostrarX(1,2),
+        'img-o': mostrarO(1,2),
+        'colr-win': mostrarWin(1,2)
+      }" (click)="toPlay(1,2)">
+            </li>
+            <li class="square" [ngClass]="{
+        'img-x': mostrarX(2,0),
+        'img-o': mostrarO(2,0),
+        'colr-win': mostrarWin(2,0)
+      }" (click)="toPlay(2,0)">
+            </li>
+            <li class="square" [ngClass]="{
+        'img-x': mostrarX(2,1),
+        'img-o': mostrarO(2,1),
+        'color-win': mostrarWin(2,1)
+      }" (click)="toPlay(2,1)"></li>
+            <li [ngClass]="{
+        'img-x': mostrarX(2,2),
+        'img-o': mostrarO(2,2),
+        'color-win': mostrarWin(2,2)
+      }" (click)="toPlay(2,2)"></li>
+        </ul>
+
+    </div>
+
+    <div *ngIf="showEnd">
+        <span>
+            <p *ngIf="player==2">Player 1 venceu!</p>
+            <p *ngIf="player==1">Player 2 venceu!</p>
+            <p *ngIf="player==0">O jogo terminou empatado...</p>
+        </span>
+        <a href="#" 
+         class="botao"
+         (click)="newGame()">
+         Jogar novamente
+      </a>
+    </div>
+    <div class="personagens-bg" id="xmen">
+        <img src="/assets/images/xmen.png" alt="">
+      </div>
+      <div class="personagens-bg" id="avengers">
+        <img src="/assets/images/avengers.png" alt="">
+      </div>
+</div>

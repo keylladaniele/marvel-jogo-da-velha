@@ -1,0 +1,91 @@
+.container {
+    
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+}
+
+.game{    
+    margin: 0 auto;
+    width: 500px;
+    height: 500px;
+}
+
+ul li {
+	list-style: none;
+	width: 130px;
+	height: 130px;
+	float: left;
+	background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    cursor: pointer;
+    background-color: rgb(69, 17, 85);
+    border: 2px solid rgb(46, 3, 28);
+    border-radius: 30px;    
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.658);
+}
+
+.img-x {
+    background-image: url('/assets/images/x2.png');
+}
+
+.img-o {
+    background-image: url('/assets/images/o2.png');
+}
+
+
+img {
+    width: 30vw;
+    
+}
+
+#xmen {
+    display: flex;
+    position: fixed;
+    top: 30%;
+    left: 5%;
+    animation: moverXmen 6s ease-in-out infinite alternate;
+
+}
+
+#avengers {
+    display: flex;
+    position: fixed;
+    top: 35%;
+    right: 5%;
+    animation: moverAvengers 6.5s ease-in-out infinite alternate;
+}
+
+@keyframes moverXmen {
+    from{
+        transform: translateY(100px);
+    }
+}
+
+@keyframes moverAvengers {
+    from{
+        transform: translateY(150px);
+    }
+}
+
+a {
+    margin: 20px 0px;
+    padding: 10px 20px;
+    background-color: rgb(255, 240, 255);
+    border-radius: 10px 20px;
+    font-weight: bold;
+}
+
+a:hover {
+    color:rgb(190, 34, 60);
+}
+
+a:active {
+    color:rgb(255, 80, 89);
+}
+
+p {
+    font-size: 40px;
+    color: #f7e4a1;
+}
