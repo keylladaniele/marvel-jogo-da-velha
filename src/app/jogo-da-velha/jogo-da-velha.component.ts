@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GameService } from '../services/game.service';
+import { MarvelApiService } from '../services/marvel-api.service';
 
 @Component({
   selector: 'app-jogo-da-velha',
@@ -12,6 +13,12 @@ export class JogoDaVelhaComponent implements OnInit {
   
   character1Confirmed: string;
   character2Confirmed: string;
+  character1Image: any[];
+  character2Image: any[];
+
+  
+  placarPlayer1: number = 0;
+  placarPlayer2: number = 0;
 
 
   ngOnInit(): void { this.gameService.inicio();
@@ -57,11 +64,14 @@ export class JogoDaVelhaComponent implements OnInit {
     this.gameService.newGame();
   }
 
+  continuePlaying(): void {
+    this.atualizaPlacar
+  }
 
   confirmCharacter1(character1Name: string) {
     console.log(character1Name);
     this.character1Confirmed = character1Name;
-    
+
   }
 
   confirmCharacter2(character2Name: string) {
@@ -69,6 +79,21 @@ export class JogoDaVelhaComponent implements OnInit {
     this.character2Confirmed = character2Name;
     
   }
+
+  get atualizaPlacar() {
+    if (this.gameService.showEnd == true) {
+      let lastPlayer = this.gameService.player 
+      if (lastPlayer == 1) {
+        this.placarPlayer1++
+      } else if (lastPlayer == 2) {
+        this.placarPlayer2++
+      } else {
+        return false;
+      }
+    }
+  } 
+
+  
   
 
 }

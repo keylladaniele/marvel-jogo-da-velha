@@ -1,5 +1,11 @@
 <div class="container">
 
+  <div class="placar">
+    <h2>Placar</h2>
+    <div class="placar1">Player 1: {{placarPlayer1}}</div>
+    <div class="placar2">Player 2: {{placarPlayer2}}</div>
+  </div>
+
     <div class="game" *ngIf="!showGameboard">
         <ul>
             <li class="square" [ngClass]="{
@@ -66,13 +72,13 @@
         </span>
         <a href="/jogo-da-velha" 
          class="botao"
-         (click)="newGame()">
-         Continuar jogando
+         (click)="continuePlaying()">
+         Novo jogo
       </a>
       <a href="#" 
          class="botao"
          (click)="newGame()">
-         Novo jogo
+         Resetar
       </a>
     </div>
     

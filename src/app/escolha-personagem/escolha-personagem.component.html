@@ -9,14 +9,18 @@
                 <div class="card">
                     <div class="card-character1">
                         <h2>Player 1</h2>
-                        <img src="{{character1.thumbnail.path}}.{{character1.thumbnail.extension}}" alt="Imagem do personagem {{character1.name}}">
+                        <img src="{{character1.thumbnail.path}}.{{character1.thumbnail.extension}}"
+                            alt="Imagem do personagem {{character1.name}}">
                         <h4>{{ character1.name }}</h4>
-                            <input type="button" value="Confirmar" class="btn" id="btn-character1" (click)="confirmCharacter1(character1.name)">
+                        <div class="botao-confirm">
+                            <input *ngIf="confirmCharacter1" type="button" value="Confirmar" class="btn" id="btn-character1"
+                                (click)="confirmCharacter1(character1.name)">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        
+
     </div>
     <div class="player 2">
         <h3>Player 2 - Escolha seu personagem</h3>
@@ -27,17 +31,18 @@
                 <div class="card">
                     <div class="card-character2">
                         <h2>Player 2</h2>
-                        <img src="{{character2.thumbnail.path}}.{{character2.thumbnail.extension}}" alt="Imagem do personagem {{character2.name}}">
+                        <img src="{{character2.thumbnail.path}}.{{character2.thumbnail.extension}}"
+                            alt="Imagem do personagem {{character2.name}}">
                         <h4>{{ character2.name }}</h4>
-                            <input type="button" value="Confirmar" class="btn" id="btn-character2" (click)="confirmCharacter2(character2.name)">
+                        <input type="button" value="Confirmar" class="btn" id="btn-character2"
+                            (click)="confirmCharacter2(character2.name)">
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
+
     <div class="btn-iniciar">
         <a href="#" class="btn" routerLink="/jogo-da-velha" routerLinkActive="active"> Iniciar jogo </a>
     </div>
 </div>
-

@@ -70,4 +70,6 @@ export class EscolhaPersonagemComponent implements OnInit {
     
   }
 
+  
+
 }

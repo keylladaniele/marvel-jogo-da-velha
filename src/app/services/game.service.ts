@@ -18,6 +18,7 @@ export class GameService {
   private _showStart: boolean;
   private _showGameboard: boolean;
   private _showEnd: boolean;
+  
 
   constructor() { }
 
@@ -188,11 +189,6 @@ export class GameService {
 
   }
 
-  continuePlaying(): void {
-    this._showEnd = false;
-    this._showStart = false;
-    this._showGameboard = true;
-  }
 
   newGame(): void {
     this.inicio();
@@ -201,7 +197,7 @@ export class GameService {
     this._showGameboard = true;
   }
 
-
+  
 
 
 }
