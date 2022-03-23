@@ -8,10 +8,17 @@ Jogo da velha com requisição de personagens da Marvel com consumo da API https
 
 
 Siga as instruções a seguir para rodar o projeto localmente:
-git clone https://github.com/keylladaniele/marvel-jogo-da-velha
-npm install
-ng serve
-Acessar http://localhost:4200/ no navegador
+
+• git clone https://github.com/keylladaniele/marvel-jogo-da-velha
+
+
+• npm install
+
+
+• npm start ou ng serve
+
+
+• Acessar http://localhost:4200/ no navegador
 
 
 
