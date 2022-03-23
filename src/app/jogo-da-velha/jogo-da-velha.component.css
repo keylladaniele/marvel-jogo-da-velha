@@ -21,7 +21,7 @@ ul li {
     background-repeat: no-repeat;
     background-position: 50% 50%;
     cursor: pointer;
-    background-color: rgb(69, 17, 85);
+    background-color: #3c0635;
     border: 2px solid rgb(46, 3, 28);
     border-radius: 30px;    
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.658);

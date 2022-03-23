@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { JitCompilerFactory } from '@angular/platform-browser-dynamic';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +17,7 @@ export class GameService {
   private _showStart: boolean;
   private _showGameboard: boolean;
   private _showEnd: boolean;
-  
+
 
   constructor() { }
 
@@ -31,6 +30,8 @@ export class GameService {
     this.win = false;
     this.iniciarTabuleiro();
   }
+
+  // Zerar tabuleiro
 
   iniciarTabuleiro(): void {
     this.gameboard = [this.tab];
@@ -55,6 +56,8 @@ export class GameService {
     return this._player;
   }
 
+  // Iniciar jogo
+
   startGame(): void {
     this._showStart = false;
     this._showGameboard = true;
@@ -65,15 +68,12 @@ export class GameService {
     if (this.gameboard[posX][posY] !== this.empty|| this.win){
       return;
     }
-    
+
     this.gameboard[posX][posY] = this._player;
     this.nMoviments++;
     this.win = this.endGame(posX, posY, this.gameboard, this._player);
     this._player = (this._player === this.X) ? this.O : this.X;
 
-    // if (!this.win && this.nMoviments < 9) {
-    //   this.cpuPlay();
-    // }
     
     if (this.win !== false) {
       this._showEnd = true;
@@ -82,9 +82,12 @@ export class GameService {
     if (!this.win && this.nMoviments === 9) {
       this._player = 0;
       this._showEnd = true;
+
     }
 
   }
+
+  // Finaliza jogo (condições para vitória)
 
   endGame(row: number, column: number, gameboard: any, player: number) {
     let fim:  any = false;
@@ -100,13 +103,13 @@ export class GameService {
         gameboard[2][column] === player) {
           fim = [[0, column], [1, column], [2, column]];
         }
-    
+
     if (gameboard[0][0] === player &&
         gameboard[1][1] === player &&
         gameboard[2][2] === player) {
           fim = [[0,0], [1,1], [2,2]];
         }
-    
+
     if (gameboard[0][2] === player &&
         gameboard[1][1] === player &&
         gameboard[2][0] === player) {
@@ -117,35 +120,7 @@ export class GameService {
   }
 
 
-  // cpuPlay(): void {
-  //   let jogada: number[] = this.getJogada(this.O);
-    
-  //   if (jogada.length <= 0) {
-  //     jogada = this.getJogada(this.X);
-  //   }
-
-  //   if (jogada.length <= 0) {
-  //     let jogadas: any= [];
-  //     for (let i=0; i<this.tab; i++){
-  //       for (let j=0; j<this.tab; j++) {
-  //         if (this.gameboard[i][j] === this.empty) {
-  //           jogadas.push([i, j]);
-  //         }
-  //       }
-  //     }
-      
-  //     let k = Math.floor((Math.random() * (jogadas.length - 1)));
-  //     jogada = [jogadas[k][0], jogadas[k][i]];
-    
-  //   }
-
-  //   this.gameboard[jogada[0]][jogada[i]] = this._player;
-  //   this.nMoviments++;
-  //   this.win = this.endGame(jogada[0], jogada[1], this.gameboard, this._player);
-  //   this._player = (this._player === this.X) ? this.O : this.X;
   
-  // }
-
 
   getJogada(player: number): number[] {
     let tabu = this.gameboard;
@@ -164,9 +139,13 @@ export class GameService {
     return [];
   }
 
+  // Exibe X no tabuleiro
+
   mostrarX(posX: number, posY: number): boolean {
     return this.gameboard[posX][posY] === this.X;
   }
+
+  // Exibe O no tabuleiro
 
   mostrarO(posX: number, posY: number): boolean {
     return this.gameboard[posX][posY] === this.O;
@@ -190,6 +169,8 @@ export class GameService {
   }
 
 
+  // Iniciar novo jogo
+
   newGame(): void {
     this.inicio();
     this._showEnd = false;
@@ -197,7 +178,7 @@ export class GameService {
     this._showGameboard = true;
   }
 
-  
+
 
 
 }

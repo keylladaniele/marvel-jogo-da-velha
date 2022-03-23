@@ -1,8 +1,16 @@
-<app-escolha-personagem></app-escolha-personagem>
-<router-outlet></router-outlet>
-<div class="personagens-bg" id="xmen">
-    <img src="/assets/images/xmen.png" alt="">
-  </div>
-  <div class="personagens-bg" id="avengers">
-    <img src="/assets/images/avengers.png" alt="">
-  </div>
+<div>
+  <img class="header" src="/assets/images/BANNER-MARVEL.jpg" alt="Banner Marvel">
+</div>
+<app-escolha-personagem (namePlay1)="setNamePlay1($event)" (namePlay2)="setNamePlay2($event)" (startGame)="starGame()"></app-escolha-personagem>
+
+<div *ngIf="showGameboard" class="placar">
+  <span>
+    <h1 *ngIf="player == 2">{{namePlay1}} venceu!</h1>
+    <h1 *ngIf="player == 1">{{namePlay2}} venceu!</h1>
+    <h1 *ngIf="player == 0">O jogo terminou empatado...</h1>
+  </span>
+</div>
+<app-jogo-da-velha
+  *ngIf="startGameClicked && !showGameboard"
+  (endGame)="endGame()"
+></app-jogo-da-velha>

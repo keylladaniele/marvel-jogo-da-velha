@@ -17,16 +17,22 @@ export class MarvelApiService {
   urlApi = `https://gateway.marvel.com/v1/public/characters?limit=6&ts=1000&apikey=${this.publicKey}&hash=${this.hash}`;
 
 
+  // Requisição de personagens na API da Marvel
   getAllCharacters():Observable<any>{
     return this.http.get<any>(this.urlApi);
     
   } 
+
+  // Busca personagem do primeiro jogador
   
   getCharacterByName1(characterName:string):Observable<any>
   {
     const characterByNameUrl = `https://gateway.marvel.com:443/v1/public/characters?limit=1&nameStartsWith=${characterName}&ts=1000&apikey=${this.publicKey}&hash=${this.hash}`;
     return this.http.get(characterByNameUrl);
   }
+
+
+  //Busca personagem do segundo jogador
 
   getCharacterByName2(characterName:string):Observable<any>
   {

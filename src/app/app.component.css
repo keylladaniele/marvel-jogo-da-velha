@@ -1,9 +1,14 @@
 
+.header {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
 
 
-img {
+.personagens-bg {
     width: 15vw;
-    
+
 }
 
 #xmen {
@@ -23,6 +28,11 @@ img {
     animation: moverAvengers 6.5s ease-in-out infinite alternate;
 }
 
+.placar {
+  display: flex;
+  justify-content: center;
+}
+
 @keyframes moverXmen {
     from{
         transform: translateY(100px);
@@ -34,3 +44,5 @@ img {
         transform: translateY(150px);
     }
 }
+
+

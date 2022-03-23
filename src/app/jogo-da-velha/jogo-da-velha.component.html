@@ -1,12 +1,5 @@
 <div class="container">
-
-  <div class="placar">
-    <h2>Placar</h2>
-    <div class="placar1">Player 1: {{placarPlayer1}}</div>
-    <div class="placar2">Player 2: {{placarPlayer2}}</div>
-  </div>
-
-    <div class="game" *ngIf="!showGameboard">
+    <div class="game">
         <ul>
             <li class="square" [ngClass]="{
           'img-x': mostrarX(0,0),
@@ -63,23 +56,4 @@
         </ul>
 
     </div>
-
-    <div *ngIf="showEnd">
-        <span>
-            <p *ngIf="player==2">Player 1 venceu!</p>
-            <p *ngIf="player==1">Player 2 venceu!</p>
-            <p *ngIf="player==0">O jogo terminou empatado...</p>
-        </span>
-        <a href="/jogo-da-velha" 
-         class="botao"
-         (click)="continuePlaying()">
-         Novo jogo
-      </a>
-      <a href="#" 
-         class="botao"
-         (click)="newGame()">
-         Resetar
-      </a>
-    </div>
-    
 </div>

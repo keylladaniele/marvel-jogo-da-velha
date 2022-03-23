@@ -10,13 +10,13 @@ import { MarvelApiService } from '../services/marvel-api.service';
 export class JogoDaVelhaComponent implements OnInit {
 
   constructor(private gameService: GameService) { }
-  
+
   character1Confirmed: string;
   character2Confirmed: string;
   character1Image: any[];
   character2Image: any[];
 
-  
+
   placarPlayer1: number = 0;
   placarPlayer2: number = 0;
 
@@ -35,7 +35,7 @@ export class JogoDaVelhaComponent implements OnInit {
   get showGameboard(): boolean {
     return this.gameService.showGameboard;
   }
- 
+
   startGame() : void {
     this.gameService.startGame();
   }
@@ -77,12 +77,12 @@ export class JogoDaVelhaComponent implements OnInit {
   confirmCharacter2(character2Name: string) {
     console.log(character2Name);
     this.character2Confirmed = character2Name;
-    
+
   }
 
   get atualizaPlacar() {
     if (this.gameService.showEnd == true) {
-      let lastPlayer = this.gameService.player 
+      let lastPlayer = this.gameService.player
       if (lastPlayer == 1) {
         this.placarPlayer1++
       } else if (lastPlayer == 2) {
@@ -91,9 +91,9 @@ export class JogoDaVelhaComponent implements OnInit {
         return false;
       }
     }
-  } 
+  }
 
-  
-  
+
+
 
 }

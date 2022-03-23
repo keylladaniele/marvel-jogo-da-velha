@@ -4,9 +4,7 @@ import { EscolhaPersonagemComponent } from './escolha-personagem/escolha-persona
 import { JogoDaVelhaComponent } from './jogo-da-velha/jogo-da-velha.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: '', pathMatch: 'full'},
-  {path: 'escolha', component: EscolhaPersonagemComponent},  
-  {path: 'jogo-da-velha', component: JogoDaVelhaComponent}
+  {path: '', redirectTo: '', pathMatch: 'full'}
 ];
 
 @NgModule({
